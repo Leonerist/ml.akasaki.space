@@ -95,6 +95,9 @@ module.exports = {
                 tex: true,
             },
         ],
+        [
+            'vuepress-plugin-element-tabs'
+        ]
     ],
     locales: {
         '/': {

@@ -1,11 +1,22 @@
 # 数据操作
 
+:::: tabs
+
+::: tab TensorFlow
 ```python
 import tensorflow as tf
 print(tf.__version__)
 ```
+:::
 
-    2.0.0
+::: tab PyTorch
+```python
+2.0.0
+```
+:::
+
+::::
+
 
 在深度学习中，我们通常会频繁地对数据进行操作。作为动手学深度学习的基础，本节将介绍如何对内存中的数据进行操作。
 
@@ -14,21 +25,62 @@ print(tf.__version__)
 ## 创建 tensor
 
 我们先介绍`tensor`的最基本功能，我们用arange函数创建一个行向量。
+:::: tabs
 
+::: tab TensorFlow
 ```python
-x = tf.constant(range(12))
-
 print(x.shape)
 ```
+:::
 
-    (12,)
+::: tab PyTorch
+```python
+len(x)
+```
+:::
+
+::::
+
+:::: tabs
+
+::: tab TensorFlow
+
+```
+(12,)
+```
+:::
+
+::: tab PyTorch
+```
+12
+```
+:::
+
+::::
 
 ```python
-x
+print(x)
 ```
 
+:::: tabs
 
-    <tf.Tensor: id=0, shape=(12,), dtype=int32, numpy=array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11])>
+::: tab TensorFlow
+```
+<tf.Tensor: id=0, shape=(12,), dtype=int32, numpy=array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11])>
+```
+:::
+
+::: tab PyTorch
+```
+tensor([[ 0,  1,  2,  3],
+        [ 4,  5,  6,  7],
+        [ 8,  9, 10, 11]])
+```
+:::
+
+::::
+
+
 
 这时返回了一个`tensor`实例，其中包含了从0开始的12个连续整数。
 
@@ -38,8 +90,9 @@ x
 x.shape
 ```
 
-
-    TensorShape([12])
+```
+\TensorShape([12])
+```
 
 我们也能够通过`len`得到`tensor`实例中元素（element）的总数。
 
